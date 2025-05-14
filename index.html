@@ -63,8 +63,13 @@
     const repoList = document.getElementById("repo-list");
 
     async function fetchRepositories() {
+      const token = "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"; // Replace with your GitHub token
       try {
-        const response = await fetch(`https://api.github.com/users/${username}/repos`);
+        const response = await fetch(`https://api.github.com/users/${username}/repos`, {
+          headers: {
+            Authorization: `token ${token}`,
+          },
+        });
         if (!response.ok) {
           throw new Error("Failed to fetch repositories");
         }
