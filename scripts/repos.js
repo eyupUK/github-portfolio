@@ -3,7 +3,7 @@
         const username = "eyupUK"; // Replace with your GitHub username
         const repoList = document.getElementById("repo-list");
         const token = "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"; // Replace with a valid GitHub token
-        
+        console.log(token);
       try {
         const response = await fetch(`https://api.github.com/users/${username}/repos`, {
           headers: {
