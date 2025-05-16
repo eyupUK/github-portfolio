@@ -18,7 +18,7 @@ async function fetchRepositories() {
   try {
     const response = await fetch(`https://api.github.com/users/${username}/repos`, {
       headers: {
-        Authorization: `token ${token}`, // Add "token" before the token value
+        Authorization: `${token}`, // Add "token" before the token value
       },
     });
     if (!response.ok) {
