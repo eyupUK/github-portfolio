@@ -7,7 +7,7 @@
       try {
         const response = await fetch(`https://api.github.com/users/${username}/repos`, {
           headers: {
-            Authorization: `token ${token}`,
+            Authorization: `${token}`,
           },
         });
         if (!response.ok) {
