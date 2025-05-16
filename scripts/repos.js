@@ -15,6 +15,7 @@ async function fetchRepositories() {
         console.error("Repository list element not found.");
         return;
     }
+    console.log("Fetching repositories for user:", username);
   try {
     const response = await fetch(`https://api.github.com/users/${username}/repos`, {
       headers: {
