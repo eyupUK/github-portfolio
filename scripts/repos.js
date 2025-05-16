@@ -3,6 +3,18 @@ const repoList = document.getElementById("repo-list"); // Move this outside the 
 const token = "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"; // Replace with a valid GitHub token
 
 async function fetchRepositories() {
+    if (!username) {
+        console.error("GitHub username is not defined.");
+        return;
+    }
+    if (!token) {
+        console.error("GitHub token is not defined.");
+        return;
+    }
+    if (!repoList) {
+        console.error("Repository list element not found.");
+        return;
+    }
   try {
     const response = await fetch(`https://api.github.com/users/${username}/repos`, {
       headers: {
