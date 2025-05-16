@@ -1,6 +1,6 @@
     const username = "eyupUK"; // Replace with your GitHub username
     const repoList = document.getElementById("repo-list");
-    const token = "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"; // Replace with a valid GitHub token
+    const token = "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"; // Replace with a valid GitHub token
     
     async function fetchRepositories() {
       try {
