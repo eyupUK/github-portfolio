@@ -1,7 +1,7 @@
-const username = "eyupUK"; // Replace with your GitHub username
+    const username = "eyupUK"; // Replace with your GitHub username
     const repoList = document.getElementById("repo-list");
-    const token = "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"; // Replace with your GitHub token
-
+    const token = "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"; // Replace with a valid GitHub token
+    
     async function fetchRepositories() {
       try {
         const response = await fetch(`https://api.github.com/users/${username}/repos`, {
@@ -10,7 +10,7 @@ const username = "eyupUK"; // Replace with your GitHub username
           },
         });
         if (!response.ok) {
-          throw new Error("Failed to fetch repositories");
+          throw new Error(`Failed to fetch repositories: ${response.status} ${response.statusText}`);
         }
         const repos = await response.json();
         displayRepositories(repos);
@@ -19,7 +19,7 @@ const username = "eyupUK"; // Replace with your GitHub username
         repoList.innerHTML = "<p>Failed to load repositories. Please try again later.</p>";
       }
     }
-
+    
     function displayRepositories(repos) {
       repoList.innerHTML = repos
         .map(
@@ -33,5 +33,5 @@ const username = "eyupUK"; // Replace with your GitHub username
         )
         .join("");
     }
-
+    
     fetchRepositories();
